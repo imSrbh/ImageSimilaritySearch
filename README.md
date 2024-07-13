@@ -17,3 +17,27 @@ The project consists of the following components:
    ```bash
    git clone git@github.com:imSrbh/ImageSimilaritySearch.git
    cd ImageSimilaritySearch
+   python3 -m venv env
+   source env/bin/activate
+   pip3 install -r requirements.txt
+   ```
+   > Note: replace the folder_path of images
+
+2. Generate Embeddings:
+   ```bash
+   python3 get_embedding.py
+
+3. Run streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
+
+---
+
+## TODO and Future Roadmap:
+
+- [ ] Add Vector databases Support(for eg. Postgres, SingleStore, ChromaDB, Pinecone etc...)
+- [ ] Add provision in the streamlit app to switch between datasets to search on.
+- [ ] Benchmark the Vector databases
+- [ ] Write a Blog post
+- [ ] Add github action workflow 

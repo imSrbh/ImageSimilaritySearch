@@ -63,10 +63,8 @@ def main():
     preprocess = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
     print(f"Device used: {device}")
 
-    # folder_path = "/Users/saurabhkumarsingh/Projects/ImageSimilaritySearchApp/women_fashion"
+    folder_path = "/Users/saurabhkumarsingh/Projects/ImageSimilaritySearchApp/data/women_fashion"
     # folder_path = "/Users/saurabhkumarsingh/Projects/ImageSimilaritySearchApp/train"
-    # image_list = [os.path.join(folder_path, file) for file in os.listdir(folder_path)]
-    folder_path = "/Users/saurabhkumarsingh/Projects/ImageSimilaritySearchApp/train"
     image_list = collect_images_from_folder(folder_path)
     print(f"Total images found: {len(image_list)}")
 
@@ -99,7 +97,7 @@ def main():
 
     # Save to pickle file for the app
     print("Saving image embeddings")
-    with open("embeddings_train.pkl", "wb") as f:
+    with open("embeddings.pkl", "wb") as f:
         pickle.dump(image_embeddings, f)
 
 

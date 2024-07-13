@@ -10,7 +10,7 @@ model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
 preprocess = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
 
 # Load embeddings from file
-with open('embeddings_train.pkl', 'rb') as f:
+with open('embeddings.pkl', 'rb') as f:
     image_embeddings = pickle.load(f)
 
 # Ensure each embedding is converted back to numpy array
@@ -46,9 +46,12 @@ for i in range(top_number):
     if i % 3 == 0:
         with col1:
             st.image(df_result.loc[i, "image_path"], width=picture_width)
+            st.write(f"Similarity Score: {df_result.loc[i, 'sim_score']:.4f}")
     elif i % 3 == 1:
         with col2:
             st.image(df_result.loc[i, "image_path"], width=picture_width)
+            st.write(f"Similarity Score: {df_result.loc[i, 'sim_score']:.4f}")
     elif i % 3 == 2:
         with col3:
             st.image(df_result.loc[i, "image_path"], width=picture_width)
+            st.write(f"Similarity Score: {df_result.loc[i, 'sim_score']:.4f}")
